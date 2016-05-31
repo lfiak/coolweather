@@ -28,12 +28,18 @@ public class HttpUtil {
 						
 					}
 					if(listener !=null){
+						//回调onFinish()方法
 						listener.onFinish(response.toString());
 					}
 				} catch (Exception e) {
-					// TODO: handle exception
+					if (listener !=null){
+						//回调onError()方法
+						listener.onError(e);
+					}
 				}
 			}
-		})
+		}).start;
 	}
+	
+	
 }
