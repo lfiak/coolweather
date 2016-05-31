@@ -28,7 +28,7 @@ public class HttpUtil {
 						
 					}
 					if(listener !=null){
-						
+						listener.onFinish(response.toString());
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
