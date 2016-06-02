@@ -72,6 +72,8 @@ public class WeatherActivity extends Activity implements android.view.View.OnCli
 	
 	private Button refreshWeather;
 	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -122,21 +124,23 @@ public class WeatherActivity extends Activity implements android.view.View.OnCli
 		default:
 			break;
 		}
-		/**
-		 * 查询县级代号所对应的天气代号。
-		 */
-		private void queryWeatherCode(String countyCode){
-			String address = "http://www.weather.com.cn/data/list3/city" + countyCode +".xml";
-			queryFromServer(address,"countyCode");
-		}
-		/**
-		 * 查询天气代号所对应的天气。
-		 */
-		
-		private void queryWeatherInfo(String weatherCode){
-			String address = "http://www.weather.com.cn/data/cityinfo/" +weatherCode +".html";
-			queryFromServer(address,"weatherCode");
-		}
+	
+	}
+	
+	/**
+	 * 查询县级代号所对应的天气代号。
+	 */
+	private void queryWeatherCode(String countyCode){
+		String address = "http://www.weather.com.cn/data/list3/city" + countyCode +".xml";
+		queryFromServer(address,"countyCode");
+	}
+	/**
+	 * 查询天气代号所对应的天气。
+	 */
+	
+	private void queryWeatherInfo(String weatherCode){
+		String address = "http://www.weather.com.cn/data/cityinfo/" +weatherCode +".html";
+		queryFromServer(address,"weatherCode");
 	}
 	/**
 	 * 根据传入的地址和类型去向服务器查询天气代号或者天气信息。
