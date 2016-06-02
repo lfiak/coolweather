@@ -83,6 +83,20 @@ public class CoolWeatherDB {
 	}
 
 	/**
+	 * 将City实例存储到数据库。
+	 */
+
+	public void saveCity(City city) {
+		if (city != null) {
+			ContentValues values = new ContentValues();
+			values.put("city_name", city.getCityName());
+			values.put("city_code", city.getCityCode());
+			values.put("province_id", city.getProvinceId());
+			db.insert("City", null, values);
+		}
+	}
+
+	/**
 	 * 从数据库读取某省的所有的城市信息
 	 */
 	public List<City> loadCities(int provinceId) {
