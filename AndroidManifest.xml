@@ -8,8 +8,8 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
-    <uses-permission android:name="android.permission.INTERNE" />
-T
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -24,14 +24,11 @@ T
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.coolweather.app.activity.WeatherActivity" >
-        </activity>
+        <activity android:name="com.coolweather.app.activity.WeatherActivity" />
 
-        <service android:name="com.coolweather.app.service.AutoUpdateServic" >
-        </service>
+        <service android:name="com.coolweather.app.service.AutoUpdateService" />
 
-        <receiver android:name="com.coolweather.app.receiver.AutoUpdateReceiver" >
-        </receiver>
+        <receiver android:name="com.coolweather.app.receiver.AutoUpdateReceiver" />
     </application>
 
 </manifest>
